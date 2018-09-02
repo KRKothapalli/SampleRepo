@@ -23,7 +23,6 @@ Public Class _Default
         sb.AppendFormat(String.Format("BULK INSERT {0} ", tableName))
         sb.AppendFormat(String.Format(" FROM '{0}'", fileFullPath))
         sb.AppendFormat(String.Format(" WITH ( FIRSTROW = 2, FIELDTERMINATOR = '{0}' , ROWTERMINATOR = '" & vbLf & "' ,", delimeter))
-        'sb.AppendFormat(String.Format(" ERRORFILE = 'C:\Users\Krishna Kothapalli\Desktop\CSVProcess\Badrecords\{0}.csv', TABLOCK)", DateTime.Now.ToString("yyyyMMddHHmmss")))
         sb.AppendFormat(String.Format(" ERRORFILE = '{0}', TABLOCK)", BadRecordsFilePath))
         sqlQuery = sb.ToString()
         Try
